@@ -1,0 +1,60 @@
+/* Reset default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Set a background color for the page */
+  body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Center the content vertically and horizontally */
+  body, html {
+    height: 100%;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Style the university options */
+  .university-option {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
+    max-width: 300px;
+  }
+  
+  .university-option img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .vote-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .vote-count {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Additional styling if needed */
+  

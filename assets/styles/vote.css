@@ -1,0 +1,58 @@
+.buttons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 35px;
+    margin-top: 50px;
+    margin-left: 50px;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(./Getty_Vote_Ballot_Election.jfif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }/* vote.css */
+
+/* Style for the buttons */
+button {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 5px;
+  position: relative; /* To position the image */
+  overflow: hidden; /* Hide image overflow */
+}
+
+/* Style for the button images */
+.button-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Scale image to cover button */
+  opacity: 0.5; /* Adjust image opacity */
+  transition: opacity 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect for buttons */
+button:hover .button-image {
+  opacity: 1;
+}
