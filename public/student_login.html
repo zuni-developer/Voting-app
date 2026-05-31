@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Login Page</title>
+  <link rel="stylesheet" href="../assets/styles/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon.png">
+</head>
+
+<body>
+  <section class="login-content">
+    <h1>Student Login</h1>
+    <form id="studentLoginForm">
+      <label for="studentName">Name:</label>
+      <input type="text" id="studentName" name="studentName" required>
+      <label for="studentID">Student ID:</label>
+      <input type="text" id="studentID" name="studentID" required>
+      <button class="login-button" type="button" onclick="handleLogin()">Login</button>
+    </form>
+  </section>
+
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js"></script>
+  <script src="../src/firebase_config.js"></script>
+  <script>
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    function handleLogin() {
+      const studentName = document.getElementById("studentName").value;
+      const studentID = document.getElementById("studentID").value;
+
+      if (!studentName || !studentID) {
+        alert("Please enter both name and ID.");
+        return;
+      }
+
+      // Assuming authentication is successful, store the login data in Firestore
+      db.collection("students").add({
+        name: studentName,
+        id: studentID,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp() // Optional timestamp
+      })
+        .then(() => {
+          alert("Login data stored successfully.");
+          window.location.href = "vote.html"; // Replace with your actual destination
+        })
+        .catch((error) => {
+          console.error("Error storing login data:", error);
+        });
+    }
+  </script>
+</body>
+
+</html>
